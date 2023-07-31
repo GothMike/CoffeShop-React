@@ -1,0 +1,124 @@
+.devider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 34px;
+  img {
+    max-width: 30px;
+    max-height: 30px;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 1px;
+    background: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  &::after {
+    right: 35%;
+  }
+  &::before {
+    left: 35%;
+  }
+  &_black {
+    &::before,
+    &::after {
+      background: black;
+    }
+    &::after {
+      right: 42%;
+    }
+    &::before {
+      left: 42%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .devider {
+    margin-bottom: 17px;
+    &::after {
+      right: 25%;
+    }
+    &::before {
+      left: 25%;
+    }
+    &_black {
+      &::before,
+      &::after {
+        background: black;
+      }
+      &::after {
+        right: 35%;
+      }
+      &::before {
+        left: 35%;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .devider {
+    margin-bottom: 10px;
+    &::after {
+      right: 30%;
+    }
+    &::before {
+      left: 30%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .devider {
+    margin-bottom: 34px;
+    &::after,
+    &::before {
+      width: 40px;
+    }
+    &::after {
+      right: 35%;
+    }
+    &::before {
+      left: 35%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .devider {
+    margin-bottom: 18px;
+    &::after,
+    &::before {
+      width: 40px;
+    }
+    &::after {
+      right: 30%;
+    }
+    &::before {
+      left: 30%;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .devider {
+    margin-bottom: 9px;
+
+    &::after,
+    &::before {
+      width: 40px;
+    }
+    &::after {
+      right: 30%;
+    }
+    &::before {
+      left: 30%;
+    }
+  }
+}
