@@ -1,9 +1,9 @@
-import NavbarPage from "../../navbar/navbarPage";
-import FooterPage from "../../footer/footerPage";
+import NavbarPage from "../../other/navbar/navbarPage";
+import FooterPage from "../../other/footer/footerPage";
 
 import Promo from "./promo/promo";
 import AboutUs from "./aboutUs/aboutUs";
-import AboutGoodsItems from "./aboutGoods/aboutGoods-items/aboutGoods-items";
+import AppItems from "../../other/app-items/app-items";
 
 import { Container, Row, Col } from "react-bootstrap";
 import { Component } from "react";
@@ -36,7 +36,8 @@ class MainPage extends Component {
   }
 
   render() {
-    const { dataItems } = this.state;
+    const { dataItems } = this.props;
+    const bestItems = dataItems.filter((item) => item.best === true);
 
     return (
       <>
@@ -61,20 +62,11 @@ class MainPage extends Component {
             </Container>
           </section>
 
-          <section className="aboutGoods">
-            <Container>
-              <Row className="justify-content-center">
-                <Col>
-                  <AboutGoodsItems dataItems={dataItems} />
-                </Col>
-              </Row>
-            </Container>
-          </section>
+          <div className="aboutGoods">
+            <AppItems dataItems={bestItems} />
+          </div>
         </main>
-
-        <footer className="footer">
-          <FooterPage />
-        </footer>
+        <FooterPage />
       </>
     );
   }

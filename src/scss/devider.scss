@@ -122,3 +122,18 @@
     }
   }
 }
+
+.newDevider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  img {
+    margin: 0 15px;
+  }
+  &__span {
+    height: 1px;
+    background-color: black;
+    width: 60px;
+  }
+}

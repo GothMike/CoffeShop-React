@@ -1,3 +1,8 @@
 @import "./promo/promo.scss";
 @import "./aboutUs/aboutUs.scss";
-@import "./aboutGoods/aboutGoods-items/aboutGoods.scss";
+
+.aboutGoods {
+  height: auto;
+  padding: 80px 0 110px 0;
+  background: url(../../../img/dest/bg/bg_paper.webp) center top / cover no-repeat;
+}

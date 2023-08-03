@@ -1,0 +1,50 @@
+.headerOther {
+  height: max(450px);
+  background: url(../../../img/dest/bg/bg_secondPage.webp) center top / cover no-repeat;
+  .bg-body-tertiary {
+    background: transparent !important;
+  }
+}
+
+.search-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_input {
+    display: flex;
+    align-items: center;
+  }
+  &_buttons {
+    display: flex;
+  }
+  input {
+    width: 180px;
+    height: 30px;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    margin: 0 83px 0 19px;
+  }
+  button {
+    margin-right: 5px;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    &:first-child {
+      margin-left: 35px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .search-panel {
+    row-gap: 15px;
+    flex-wrap: wrap;
+    input {
+      margin: 0 20px;
+    }
+    button {
+      &:first-child {
+        margin-left: 20px;
+      }
+    }
+  }
+}
