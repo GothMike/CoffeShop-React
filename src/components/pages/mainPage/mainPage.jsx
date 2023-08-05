@@ -11,28 +11,7 @@ import { Component } from "react";
 class MainPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      dataItems: [
-        {
-          id: 1,
-          img: "../../../../img/dest/items/firstItem.webp",
-          name: "Solimo Coffee Beans 2 kg",
-          price: "10.73",
-        },
-        {
-          id: 2,
-          img: "../../../../img/dest/items/secondItem.webp",
-          name: "Presto Coffee Beans 1 kg",
-          price: "15.99",
-        },
-        {
-          id: 3,
-          img: "../../../../img/dest/items/trirdItem.webp",
-          name: "AROMISTICO Coffee 1 kg",
-          price: "6.99",
-        },
-      ],
-    };
+    this.state = {};
   }
 
   render() {

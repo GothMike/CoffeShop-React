@@ -4,12 +4,12 @@ import Info from "../../other/Info/info";
 import FooterPage from "../../other/footer/footerPage";
 import AppItems from "../../other/app-items/app-items";
 
-const ThirdPage = () => {
-  const { dataItems } = this.state;
+import "./thirdPage.scss";
 
+const ThirdPage = ({ dataItems, dataContent }) => {
   return (
     <>
-      <header className="headerOther">
+      <header className="headerThirdPage">
         <Container>
           <NavbarPage />
           <Row className="justify-content-center">
@@ -19,7 +19,7 @@ const ThirdPage = () => {
           </Row>
         </Container>
       </header>
-      <Info />
+      <Info dataContent={dataContent} dataContentPage={"ThirdPage"} />
       <AppItems dataItems={dataItems} />
       <FooterPage />
     </>

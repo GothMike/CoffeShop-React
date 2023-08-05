@@ -2,7 +2,10 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import "./info.scss";
 
-const Info = () => {
+const Info = ({ dataContent, dataContentPage }) => {
+  const name = dataContentPage;
+  const filteredData = dataContent.filter((item) => item.name === name);
+
   return (
     <section className="info">
       <Container>
@@ -10,25 +13,16 @@ const Info = () => {
           <Col>
             <div className="info__item">
               <div className="info__img">
-                <img src="../../../img/dest/other/aboutUs.webp" alt="aboutUs" />
+                <img src={filteredData[0].img} alt={filteredData[0].alt} />
               </div>
               <div className="info__wrapper">
-                <div className="info__subheader">About our beans</div>
+                <div className="info__subheader">{filteredData[0].subheader}</div>
                 <div className="newDevider">
                   <div className="newDevider__span"></div>
                   <img src="img/svg/coffee-beans-black.svg" alt="coffe-beans-black" />
                   <div className="newDevider__span"></div>
                 </div>
-                <p className="info__text">
-                  Extremity sweetness difficult behaviour he of. On disposal of as landlord
-                  horrible.
-                  <br />
-                  <br />
-                  Afraid at highly months do things on at. Situation recommend objection do
-                  intention so questions. As greatly removed calling pleased improve an. Last ask
-                  him cold feel met spot shy want. Children me laughing we prospect answered
-                  followed. At it went is song that held help face.
-                </p>
+                <p className="info__text">{filteredData[0].text}</p>
               </div>
             </div>
             <span className="info__line"></span>
