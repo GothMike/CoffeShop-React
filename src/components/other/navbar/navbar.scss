@@ -1,3 +1,14 @@
+.header {
+  &__link {
+    color: #fff;
+    font-family: Merienda;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    margin: 15px 15px 0;
+  }
+}
+
 .nav-link,
 .navbar-brand {
   color: #fff !important;

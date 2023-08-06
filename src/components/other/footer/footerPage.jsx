@@ -23,14 +23,14 @@ const FooterPage = () => {
                 </Link>
               </li>
               <li className="footer__link">
-                <Link to="/about">Our coffee</Link>
+                <Link to="/products">Our coffee</Link>
               </li>
               <li className="footer__link">
-                <Link to="/contact">For your pleasure</Link>
+                <Link to="/aboutUs">For your pleasure</Link>
               </li>
             </ul>
             <div className="devider devider_black">
-              <img src="img/svg/coffee-beans-black.svg" alt="coffe-beans-black" />
+              <img src="../../../img/svg/coffee-beans-black.svg" alt="coffe-beans-black" />
             </div>
           </Col>
         </Row>

@@ -1,13 +1,20 @@
 import AppItem from "../app-item/app-item";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import "./app-items.scss";
 
 const AppItems = ({ dataItems }) => {
   const elements = dataItems.map((elem) => {
     const { id, ...elemProps } = elem;
-    return <AppItem key={id} {...elemProps} />;
+
+    return (
+      <Link key={id} to={`/products/${id}`}>
+        <AppItem key={id} {...elemProps} />
+      </Link>
+    );
   });
+
   return (
     <>
       <section className="products">

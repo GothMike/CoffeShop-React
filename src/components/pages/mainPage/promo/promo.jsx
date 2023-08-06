@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Promo = () => {
   return (
@@ -12,7 +13,9 @@ const Promo = () => {
         Want to try our beans?
       </h2>
       <div className="promo__button">
-        <Button variant="outline-light">More</Button>{" "}
+        <Link to="/aboutUs">
+          <Button variant="outline-light">More</Button>
+        </Link>
       </div>
     </>
   );

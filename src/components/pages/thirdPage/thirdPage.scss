@@ -5,3 +5,13 @@
     background: transparent !important;
   }
 }
+
+@media (max-width: 768px) {
+  .headerThirdPage {
+    height: 250px;
+    background: url(../../../img/dest/bg/bg_thirdPage.webp) center center no-repeat;
+    .bg-body-tertiary {
+      background: transparent !important;
+    }
+  }
+}

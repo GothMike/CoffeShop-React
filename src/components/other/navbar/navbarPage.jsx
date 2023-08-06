@@ -2,6 +2,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
+import { Link } from "react-router-dom";
+
 import "./navbar.scss";
 
 const NavbarPage = () => {
@@ -9,7 +11,7 @@ const NavbarPage = () => {
     <header className="header">
       <Navbar expand="lg" className="promo__navbar bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/">
+          <Link className="header__link" to="/">
             <img
               alt="logo"
               src="/img/svg/coffee-beans-transperent.svg"
@@ -18,12 +20,16 @@ const NavbarPage = () => {
               className="d-inline-block align-center"
             />{" "}
             Coffee house
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/aboutGoods">Our coffee</Nav.Link>
-              <Nav.Link href="/aboutUs">For your pleasure </Nav.Link>
+              <Link className="header__link" to="/products">
+                Our coffee
+              </Link>
+              <Link className="header__link" to="/aboutUs">
+                For your pleasure{" "}
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

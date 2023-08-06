@@ -6,3 +6,9 @@
   padding: 80px 0 110px 0;
   background: url(../../../img/dest/bg/bg_paper.webp) center top / cover no-repeat;
 }
+
+@media (max-width: 768px) {
+  .aboutGoods {
+    background: url(../../../img/dest/bg/bg_paper.webp) center top;
+  }
+}

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "../pages/mainPage/mainPage";
 import SecondPage from "../pages/secondPage/secondPage";
 import ThirdPage from "../pages/thirdPage/thirdPage";
+import ItemPage from "../pages/itemPage/itemPage";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../scss/index.scss";
@@ -62,7 +63,7 @@ class App extends Component {
         },
       ],
       term: "",
-      filter: "all",
+      filter: "",
 
       dataContent: [
         {
@@ -87,35 +88,56 @@ class App extends Component {
     this.setState({ term });
   };
 
+  onFilterSelect = (filter) => {
+    this.setState({ filter });
+  };
+
   searchItem = (items, term) => {
-    term = term.toLowerCase(); // приведение искомого термина к нижнему регистру
+    term = term.toLowerCase();
 
     if (term.length === 0) {
       return items;
     }
 
     return items.filter((item) => {
-      return item.country.toLowerCase().indexOf(term) > -1; // приведение имени каждого элемента к нижнему регистру перед сравнением
+      return Object.values(item).some((value) => value.toString().toLowerCase().indexOf(term) > -1);
     });
   };
+
+  filterPost = (items, filter) => {
+    switch (filter) {
+      case "Brazil":
+        return items.filter((item) => item.country === "Brazil");
+      case "Kenya":
+        return items.filter((item) => item.country === "Kenya");
+      case "Columbia":
+        return items.filter((item) => item.country === "Columbia");
+      default:
+        return items;
+    }
+  };
+
   render() {
-    const { dataItems, dataContent, term } = this.state;
-    const visibleData = this.searchItem(dataItems, term);
+    const { dataItems, dataContent, term, filter } = this.state;
+    const visibleData = this.filterPost(this.searchItem(dataItems, term), filter);
 
     return (
       <Router>
         <Routes>
           <Route path="/" element={<MainPage dataItems={dataItems} />} />
           <Route
-            path="/aboutGoods"
+            path="/products"
             element={
               <SecondPage
                 onUpdateSearch={this.onUpdateSearch}
+                onFilterSelect={this.onFilterSelect}
                 dataContent={dataContent}
                 dataItems={visibleData}
+                filter={filter}
               />
             }
           />
+          <Route path="/products/:id" element={<ItemPage dataItems={dataItems} />} />
           <Route
             path="/aboutUs"
             element={<ThirdPage dataContent={dataContent} dataItems={dataItems} />}

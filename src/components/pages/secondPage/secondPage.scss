@@ -16,6 +16,10 @@
   }
   &_buttons {
     display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
   }
   input {
     width: 180px;
@@ -26,25 +30,32 @@
     margin: 0 83px 0 19px;
   }
   button {
-    margin-right: 5px;
+    margin: 0 5px 0 15px;
     box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.25);
-    &:first-child {
-      margin-left: 35px;
-    }
   }
 }
 
 @media (max-width: 768px) {
+  .headerSecondPage {
+    height: 250px;
+    background: url(../../../img/dest/bg/bg_secondPage.webp) center center no-repeat;
+    .bg-body-tertiary {
+      background: transparent !important;
+    }
+  }
   .search-panel {
     row-gap: 15px;
     flex-wrap: wrap;
     input {
       margin: 0 20px;
     }
+  }
+}
+
+@media (max-width: 375px) {
+  .search-panel {
     button {
-      &:first-child {
-        margin-left: 20px;
-      }
+      margin: 0 5px 0 0;
     }
   }
 }

@@ -23,7 +23,6 @@
   &__button {
     display: flex;
     justify-content: center;
-
     .btn {
       width: 120px;
       height: 30px;
@@ -32,6 +31,7 @@
       font-family: Merienda;
       font-size: 14px;
       font-weight: 700;
+      transition: all 0.5s;
     }
   }
 }

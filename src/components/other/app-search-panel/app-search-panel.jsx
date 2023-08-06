@@ -12,7 +12,6 @@ class AppSeacrhPanel extends Component {
     const term = e.target.value;
     this.setState({ term });
     this.props.onUpdateSearch(term);
-    console.log(term);
   };
 
   render() {

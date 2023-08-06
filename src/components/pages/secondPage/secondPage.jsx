@@ -9,7 +9,7 @@ import AppItems from "../../other/app-items/app-items";
 
 import "./secondPage.scss";
 
-const SecondPage = ({ dataItems, dataContent, onUpdateSearch }) => {
+const SecondPage = ({ dataItems, dataContent, onUpdateSearch, onFilterSelect, filter }) => {
   return (
     <>
       <header className="headerSecondPage">
@@ -28,7 +28,7 @@ const SecondPage = ({ dataItems, dataContent, onUpdateSearch }) => {
           looking for <AppSeacrhPanel onUpdateSearch={onUpdateSearch} />
         </div>
         <div className="search-panel_buttons">
-          or filter <AppFilter />
+          or filter <AppFilter filter={filter} onFilterSelect={onFilterSelect} />
         </div>
       </section>
       <AppItems dataItems={dataItems} />

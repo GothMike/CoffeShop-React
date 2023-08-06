@@ -8,9 +8,19 @@
 }
 
 .subheader {
-  margin-top: 25%;
+  height: 350px;
+  display: flex;
   color: #fff;
   font-size: 40px;
   font-weight: 700;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .subheader {
+    height: 150px;
+    font-size: 32px;
+  }
 }
